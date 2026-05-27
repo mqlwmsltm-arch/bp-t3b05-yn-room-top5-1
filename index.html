@@ -1,199 +1,314 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>영화 미학 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연남 룸싸롱 TOP5 & 가성비 솔직 비교 - 연남 밤거리 안내소</title>
+    <meta name="description" content="연남 룸싸롱 TOP5 완벽 분석! 연남동 주변 최고급 가라오케, 셔츠룸, 요정의 정찰제 요금 비교와 에이스 매니저들의 실시간 서비스 후기를 엄선해 공개합니다.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: hsl(45, 100%, 55%);
+            --secondary: hsl(35, 100%, 50%);
+            --dark: hsl(0, 0%, 5%);
+            --card-bg: hsl(0, 0%, 11%);
+            --text: hsl(0, 0%, 93%);
+            --text-muted: hsl(0, 0%, 65%);
+            --border: hsl(45, 40%, 15%);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--card-bg));
+            border-bottom: 2px solid var(--border);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .hero {
+            background: radial-gradient(circle at center, hsl(45, 30%, 10%), var(--dark));
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(255, 200, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 200, 0, 0.5);
+        }
+        .main-content {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .intro-section {
+            margin-bottom: 50px;
+        }
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .intro-section p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .reviews-section {
+            margin: 60px 0;
+            background: linear-gradient(135deg, var(--card-bg), var(--dark));
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        .reviews-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .review-card {
+            background-color: var(--dark);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .review-author {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        .info-bar {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            padding: 20px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            border-radius: 12px;
+            margin: 50px 0;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .info-bar a {
+            color: #000;
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #000;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+        footer strong {
+            color: var(--text);
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "연남 룸싸롱 TOP5 가이드",
+      "description": "연남역, 연남동 주변 최고급 룸싸롱, 가라오케, 유흥 가성비 TOP5 순위 및 예약 추천 제공.",
+      "telephone": "010-6279-0862",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "마포구 연남동",
+        "addressCountry": "KR"
+      },
+      "priceRange": "$$$"
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
-  </style>
+    </script>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>영화 미학 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>영화 미학</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>안드레이 타르코프스키의 장시간 촬영(Long Take)과 조형적 침묵의 미학</h3>
-          <p>세계적인 영화 거장 안드레이 타르코프스키 감독이 고집했던 롱테이크 샷 기법은 단순히 기술적인 길이를 넘어 관객의 물리적 시간 감각을 정지시키고 인위적인 미장센 속 조형적 침묵을 체...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>고전 공포영화 음향 효과 속 숨겨진 악기: 워터폰(Waterphone)의 금속성 불협화음</h3>
-          <p>스크린 위에 깃드는 기괴하고 날카로운 서스펜스를 조율할 때 필수로 채용되는 특수 타악기인 워터폰은 청동 실린더 내부에 차 있는 물의 양에 따라 공진 주파수가 극적으로 변하여 사람의...</p>
-        </a>
-      
+<header>
+    <div class="header-container">
+        <div class="logo">Yeonnam TOP5</div>
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="about.html">소개</a>
+        </nav>
+    </div>
+</header>
 
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>스탠리 큐브릭 감독의 대칭 구도: 1점 투시 도식(One-Point Perspective)이 주는 심리적 압박</h3>
-          <p>완벽주의적인 시네아스트 스탠리 큐브릭이 애용했던 화면 정중앙의 1점 투시 수렴 대칭 구도는 관객의 시선을 강제로 가두어 인공적인 폐쇄 공포와 거역할 수 없는 심리적 억압 효과를 자...</p>
-        </a>
-      
+<section class="hero">
+    <h1>연남 룸싸롱 TOP5 <span>명예의 전당</span></h1>
+    <p>연트럴파크 2차 고민은 끝! 삐끼들의 거품 마케팅 싹 빼고 양심적으로 평가한 연남동 고급 룸 리스트.</p>
+    <a href="tel:010-6279-0862" class="cta-btn">연남 TOP5 실시간 문의: 010-6279-0862</a>
+</section>
 
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 화곡 셔츠룸 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
+<div class="main-content">
+    <section class="intro-section">
+        <h2>연남동 골목길 뒤에 숨겨진 최고급 프라이빗 룸싸롱 해부</h2>
+        <p>반갑다 마포 연남 로컬 브로들! 요즘 연남동은 다들 알다시피 예쁘장한 카페와 맛집, 이자카야만 도배된 조용한 데이트 상권으로 인식하잖아. 하지만 진짜 연남동의 매력은 밤 깊은 시간에 드러나지. 메인 상권 이면 도로와 빌딩 지하에 숨겨진 프리미엄 프라이빗 룸싸롱과 가라오케는, 소란스럽고 북적이는 홍대 거리를 피해 조용히 비즈니스를 나누거나 품격 있게 접대하고 싶은 형들을 위한 숨겨진 요새 같은 곳들이야.</p>
+        <p>하지만 정보가 워낙 폐쇄적이고 숨겨져 있다 보니, 섣불리 들어갔다가 주머니 사정 뻔한데 감당 안 되는 바가지요금을 물기 십상이야. 그래서 내가 연남동 구석구석을 샅샅이 뒤져 시설, 가격, 매니저 마인드까지 종합적으로 점수 내어 엄선한 진짜 TOP5 랭킹을 제공해주려 해. 대접받아야 할 접대 자리에서 어설픈 예약으로 기분 잡치지 마라 브로.</p>
+    </section>
 
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 화곡 셔츠룸 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
+    <div class="info-bar">
+        🏆 연남동 TOP5 실시간 제휴 특별 룸 예약 & 혜택 상담: <a href="tel:010-6279-0862">010-6279-0862</a>
+    </div>
+
+    <section class="intro-section">
+        <h2>연남동 프리미엄 룸 유형별 추천 가이드</h2>
+        <p>방문하시는 분들의 연령대나 성향에 따라 확실한 콘셉트의 업소를 지정해서 가야 원하는 최고의 시너지를 낼 수 있어. 아래를 체크해라.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>1. 전통 프라이빗 룸싸롱</h3>
+                <p>격조 높은 비즈니스 상담이나 중대한 계약 성사를 위해 고급 양주와 차원이 다른 철저한 의전 비서 마인드를 제공하는 정통 요정식 룸.</p>
+            </div>
+            <div class="card">
+                <h3>2. 럭셔리 하이앤드 가라오케</h3>
+                <p>지인 생일 모임이나 동료들과 고급스러운 인테리어 속에서 위스키 한잔하며 노래도 마음껏 뽑고 서비스도 빵빵하게 챙길 수 있는 세련된 핫플.</p>
+            </div>
+            <div class="card">
+                <h3>3. 화끈한 에이스 셔츠룸</h3>
+                <p>일반 정적인 술자리가 질색인 청춘 브로들을 위한 화끈하고 유쾌한 밀착 에이스 셔츠룸 코스! 확실한 텐션과 정찰제로 가성비 최상.</p>
+            </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+    </section>
+
+    <section class="reviews-section">
+        <h2>연남 로컬 단골 형들의 솔직 생생 평가</h2>
+        
+        <div class="review-card">
+            <p>"연남동 주변에서 프라이빗하게 접대할 곳이 마땅치 않아 걱정했는데, 여기 랭킹 1위 업소 다녀오고 거래처 부장님이 너무 만족해하셨습니다. 정찰제라 깔끔하고 의전이 정말 고급스럽네요."</p>
+            <div class="review-author">- 마포 벤처기업 김대표 (35세)</div>
+        </div>
+
+        <div class="review-card">
+            <p>"주말 생일파티로 룸 예약 문의드렸는데 과일 안주에 음료 서비스까지 시원하게 쏴주셨습니다. 연남동 최고의 실장님 라인업 인정할 수밖에 없네요."</p>
+            <div class="review-author">- 연남동 주민 최형님 (31세)</div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <h2>연남동 VIP 유흥 이용 팁</h2>
+        <p>첫째, 연남동 메인 주택가 이면도로 상권은 프라이버시가 극히 철저해서 일반 길거리 호객꾼 자체가 없다. 찌라시 돌리는 애들은 다 홍대에서 흘러 들어온 뜨내기 사기꾼들이니 쳐다도 보지 마라. 둘째, 정통 룸 계열은 테이블 잔여 상황이 매일 긴박하게 달라지니 방문 1시간 전 예약 필수다. 셋째, 확실한 신용 보증된 연남 마스터 직통(010-6279-0862)으로 다이렉트 컨펌을 뚫는 게 술값 아끼고 대만족하는 인생 치트키다.</p>
+    </section>
+</div>
+
+<footer>
+    <p>상호: 연남 밤문화 연구소 | 대표자: 연남마스터</p>
+    <p>문의 직통 전화: <strong>010-6279-0862</strong> (부재 시 문자 필수)</p>
+    <p>&copy; 2026 Yeonnam TOP5. All Rights Reserved. 본 사이트는 성인 전용 정보 포털입니다.</p>
+</footer>
+
 </body>
 </html>
