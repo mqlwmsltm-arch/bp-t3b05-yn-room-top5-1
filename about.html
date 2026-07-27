@@ -1,268 +1,99 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>연남 룸싸롱 TOP5 | 정보 - 진짜 핫한 곳</title>
-    <meta name="description" content="연남에서 진짜 핫한 룸싸롱 TOP5를 소개한다. 형들이 직접 가보고 추천하는 곳들, 가격대, 분위기, 전화번호까지 싹 다 알려줌. 클릭하면 연남 밤문화가 보인다.">
-    <meta name="keywords" content="연남 룸싸롱, 연남 룸싸롱 추천, 연남 룸싸롱 TOP5, 연남 유흥, 연남 술집, 연남 룸싸롱 가격, 연남 밤문화">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://yeonnam-night-review.node-link.shop/about.html">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-acid-yellow">
-    <meta property="og:title" content="연남 룸싸롱 TOP5 | 정보">
-    <meta property="og:description" content="연남에서 진짜 핫한 룸싸롱 TOP5. 형들이 직접 가보고 추천하는 곳들, 가격대, 분위기, 전화번호까지 싹 다 알려줌.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yeonnam-night-review.node-link.shop/about.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        /* RESET & BASE */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Arial Black', 'Impact', sans-serif;
-            background: #111;
-            color: #eee;
-            line-height: 1.4;
-        }
-        a {
-            color: #ffcc00;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #fff;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        /* TYPOGRAPHY */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            color: #ffcc00;
-            text-shadow: 4px 4px 0 #000;
-        }
-        h2 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            margin-bottom: 1rem;
-            border-left: 8px solid #ffcc00;
-            padding-left: 0.5rem;
-        }
-        h3 {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            margin-bottom: 0.5rem;
-        }
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-        }
-        /* BRUTAL CONTAINERS */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .full-bleed {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-        }
-        /* SECTION GAP & SPACING */
-        section {
-            padding: 4rem 0;
-        }
-        /* HEADER / NAV */
-        header {
-            background: #000;
-            border-bottom: 4px solid #ffcc00;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #ffcc00;
-            text-transform: uppercase;
-        }
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-menu a {
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-        .nav-menu a:hover {
-            color: #fff;
-        }
-        /* hamburger-menu (768px 이하) */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-        .hamburger span {
-            display: block;
-            width: 30px;
-            height: 4px;
-            background: #ffcc00;
-            border-radius: 2px;
-        }
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                background: #111;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 200px;
-                padding: 1rem;
-                border: 2px solid #ffcc00;
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
-        /* HERO */
-        .hero {
-            background: #1a1a1a;
-            border-bottom: 6px solid #ffcc00;
-            padding: 5rem 0;
-            text-align: center;
-        }
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        /* CARD LIST */
-        .top-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .top-card {
-            background: #1e1e1e;
-            border: 3px solid #333;
-            padding: 2rem;
-            transition: border-color 0.3s, transform 0.2s;
-        }
-        .top-card:hover {
-            border-color: #ffcc00;
-            transform: translateX(8px);
-        }
-        .top-card h3 {
-            margin-top: 0;
-        }
-        .top-card .price {
-            font-size: 1.2rem;
-            color: #ffcc00;
-            font-weight: bold;
-        }
-        .top-card .tel-link {
-            display: inline-block;
-            margin-top: 1rem;
-            background: #ffcc00;
-            color: #111;
-            padding: 0.5rem 1.2rem;
-            font-weight: 900;
-            border: 2px solid #ffcc00;
-            transition: background 0.3s, color 0.3s;
-        }
-        .top-card .tel-link:hover {
-            background: #111;
-            color: #ffcc00;
-        }
-        /* FAQ */
-        .faq-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .faq-item {
-            background: #1a1a1a;
-            border-left: 6px solid #ffcc00;
-            padding: 1.2rem 1.5rem;
-        }
-        .faq-item h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        .faq-item p {
-            margin: 0;
-        }
-        /* FOOTER */
-        footer {
-            background: #000;
-            border-top: 4px solid #ffcc00;
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #ffcc00;
-        }
-        /* MISC */
-        .highlight {
-            color: #ffcc00;
-        }
-    </style>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <title>연남 룸싸롱 TOP5 — 상세 정보</title>
+  <meta name="description" content="연남에 있는 룸싸롱을 처음 찾는 분들을 위해, 지역별 특징, 이용 목적별 체크리스트, 예약 절차와 사후 관리 등을 자세히 안내합니다.">
+  <meta name="keywords" content="연남, 룸싸롱, 연남 룸싸롱 TOP5, 상세 정보, 이용 가이드">
+  <link rel="canonical" href="https://yeonnam-night-review.node-link.shop/about.html">
+  <meta property="og:title" content="연남 룸싸롱 TOP5 — 상세 정보">
+  <meta property="og:description" content="연남 룸싸롱 이용 전 꼭 알아야 할 상세 정보와 체크리스트를 제공합니다.">
+  <meta property="og:url" content="https://yeonnam-night-review.node-link.shop/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://yeonnam-night-review.node-link.shop/og-image.jpg">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="nav-logo">연남TOP5</div>
-            <nav>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/info" style="color:#fff; text-decoration: underline;">정보</a></li>
-                    <li><a href="/contact">문의</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+  <header class="k-wrap-vrx0">
+    <nav class="x-wrap-k6lx">
+      <a href="/"><img src="/logo.png" alt="홈"></a>
+      <a href="/top5">TOP5</a>
+      <a href="/info">정보</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">연락처</a>
+    </nav>
+  </header>
 
-    <main>
-        <section class="hero full-bleed">
-            <div class="container">
-                <h1>연남 룸싸롱 TOP5<br>진짜 핫한 곳만 모았다</h1>
+  <main class="k-wrap-vrx0">
+    <h1>연남 룸싸롱 상세 정보</h1>
+    <section>
+      <h2>1️⃣ 연남 지역 특성</h2>
+      <p>연남은 트렌디한 카페와 바, 그리고 다양한 엔터테인먼트 시설이 밀집한 동네입니다. 특히 젊은 층이 많이 찾는 만큼, 분위기와 서비스 수준이 다른 지역에 비해 높은 편입니다. 이 때문에 연남의 룸싸롱은 다양한 테마와 인테리어를 제공하며, 고객 맞춤형 서비스를 강조합니다.</p>
+      <p>또한 연남은 지하철 2호선 홍대입구역과 인접해 있어 접근성이 뛰어납니다. 주변에 숙박 시설과 음식점이 풍부해, 하루 일정을 마무리하고 바로 방문하기에도 편리합니다. 이러한 위치적 장점은 사전 예약 시 교통편을 고려한 계획을 세우는 데 큰 도움이 됩니다.</p>
+    </section>
+
+    <section>
+      <h2>2️⃣ 이용 목적별 체크리스트</h2>
+      <p>룸싸롱을 처음 이용하는 경우, 목적에 따라 체크해야 할 항목이 달라집니다. <strong>친목·소통</strong>을 목적으로 할 때는 분위기와 음악, 라운지 공간이 중요한 체크 포인트가 됩니다. 반면 <strong>프라이빗 파티</strong>를 계획한다면 방 크기, 인원 수용 한도, 음료/주류 옵션을 사전 확인하는 것이 필수입니다.</p>
+      <p>또한 <strong>비즈니스 미팅</strong> 용도로 사용할 경우, 방음 설비와 인터랙티브 디스플레이 유무를 확인해야 합니다. 이를 통해 외부 소음으로부터 보호받으며, 프레젠테이션이나 자료 공유가 원활히 진행될 수 있습니다. 각 목적에 맞는 체크리스트를 활용하면 방문 전 준비가 훨씬 수월해집니다.</p>
+    </section>
+
+    <section>
+      <h2>3️⃣ TOP5 연남 룸싸롱 카드</h2>
+      <ul class="n-grid-1ftu">
+        <li class="n-card-2tx2">
+          <h3>스위트 라운지</h3>
+          <p>모던한 인테리어와 맞춤형 조명 시스템을 갖춘 프리미엄 라운지. 2~6인까지 수용 가능.</p>
+          <p>예약 시 최소 2시간 이상 선결제 필요, 주류 별도 주문 가능.</p>
+        </li>
+        <li class="n-card-2tx2">
+          <h3>라벤더 하우스</h3>
+          <p>아늑한 분위기의 라벤더 향이 퍼지는 방. 4인 이하 소규모 모임에 최적.</p>
+          <p>비흡연 방이며, 음료 메뉴가 다양해 선택 폭이 넓음.</p>
+        </li>
+        <li class="n-card-2tx2">
+          <h3>노스탤지아</h3>
+          <p>레트로 감성을 살린 빈티지 디자인. 대형 파티룸은 12명까지 이용 가능.</p>
+          <p>음악 시스템과 프로젝터가 구비돼 엔터테인먼트 활용도가 높음.</p>
+        </li>
+        <li class="n-card-2tx2">
+          <h3>클래식 라운지</h3>
+          <p>고급스러운 클래식 인테리어와 와인 리스트가 특징. 3~5인 소규모 비즈니스 미팅에 적합.</p>
+          <p>와인·칵테일 전용 바가 별도로 운영돼 분위기 연출이 용이.</p>
+        </li>
+        <li class="n-card-2tx2">
+          <h3>시크 파빌리온</h3>
+          <p>심플하면서도 세련된 디자인, 야외 테라스와 연결된 공간이 매력.</p>
+          <p>날씨에 따라 야외 파티와 실내 파티를 자유롭게 전환 가능.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4️⃣ 예약 절차와 사후 관리</h2>
+      <p>예약은 온라인 폼, 전화, 혹은 카카오톡 공식 채널을 통해 진행할 수 있습니다. 첫 예약 시 최소 30% 선결제가 요구되며, 예약 변경은 최소 2시간 전까지 가능합니다. 예약 확정 후에는 방 번호와 입장 절차를 안내받게 되며, 입장 시 신분 확인 절차가 진행됩니다.</p>
+      <p>방문 후에는 청결 상태와 서비스 만족도를 평가할 수 있는 간단 설문이 제공됩니다. 설문 결과는 다음 방문 시 맞춤형 서비스를 제공하는 데 활용되며, 불만 사항이 있을 경우 즉시 담당자에게 연락해 문제를 해결할 수 있습니다.</p>
+    </section>
+
+    <section>
+      <h2>5️⃣ 자주 묻는 질문 (FAQ)</h2>
+      <div class="faq-item">
+        <h3>Q. 예약 취소는 어떻게 하나요?</h3>
+        <p>A. 예약 확정 후 24시간 이내에 취소하면 전액 환불이 가능합니다. 24시간 이후 취소 시 50% 환불이 적용됩니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Q. 입장 시 신분증은 꼭 보여줘야 하나요?</h3>
+        <p>A. 네, 본인 확인을 위해 신분증 제시가 필수입니다. 프라이버시 보호를 위해 복사본이 아닌 원본만 확인합니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Q. 주류 및 음료는 외부에서 가져와도 되나요?</h3>
+        <p>A. 대부분의 룸싸롱은 외부 주류 반입을 금지하고 있습니다. 현장에서 제공되는 주류와 음료를 이용해 주시기 바랍니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="k-wrap-vrx0">
+    <p>&copy; 2026 연남 룸싸롱 정보 제공 사이트. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
